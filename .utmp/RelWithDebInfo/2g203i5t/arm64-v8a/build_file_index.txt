@@ -1,0 +1,2 @@
+D:\GamesDevelopment\GitHub\Zombie-Scrap-Survivor\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+D:\GamesDevelopment\GitHub\Zombie-Scrap-Survivor\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

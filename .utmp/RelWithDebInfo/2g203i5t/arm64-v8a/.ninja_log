@@ -1,0 +1,19 @@
+# ninja log v5
+121	746	7627646430825352	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	dcde7a9104899730
+30	600	7627646429332820	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	469db9d9dd24f9a
+217	841	7627646431760435	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	15684de478d31415
+2	560	7627646428930617	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	58e1dc87a6be7a2a
+12	690	7627646430251846	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	5e1a75061d36d7d3
+40	644	7627646429797483	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	6b91466c6ec7b7dc
+86	873	7627646432077341	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f08f154b2019449c
+875	1036	7627646433698538	D:/GamesDevelopment/GitHub/Zombie-Scrap-Survivor/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2g203i5t/obj/arm64-v8a/libgame.so	3645883a2eeaeb72
+21	875	7627646432089384	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	928c0732916c3873
+52	918	7627697627192591	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	dcde7a9104899730
+38	974	7627697627731872	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	469db9d9dd24f9a
+2	978	7627697627818044	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	58e1dc87a6be7a2a
+64	986	7627697627938733	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	6b91466c6ec7b7dc
+91	1178	7627697629791319	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	15684de478d31415
+13	1376	7627697630861175	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	5e1a75061d36d7d3
+77	1569	7627697633757200	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f08f154b2019449c
+25	1696	7627697635049881	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	928c0732916c3873
+1696	1801	7627697636088516	D:/GamesDevelopment/GitHub/Zombie-Scrap-Survivor/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2g203i5t/obj/arm64-v8a/libgame.so	3645883a2eeaeb72
