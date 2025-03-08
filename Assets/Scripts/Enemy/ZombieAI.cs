@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ZombieAI : MonoBehaviour
 {
@@ -10,15 +11,24 @@ public class ZombieAI : MonoBehaviour
 
     private Transform _player;
     private Animator _animator;
-    private IMovable _movement;
     private IAttackable _attack;
     private IDamageable _playerHealth;
+    private NavMeshAgent _navMeshAgent;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        _movement = new ZombieMovement(transform, _moveSpeed);
         _attack = new ZombieAttack(_animator, _attackDamage, _attackCooldown);
+        _navMeshAgent = GetComponent<NavMeshAgent>();
+
+        if (_navMeshAgent != null)
+        {
+            _navMeshAgent.speed = _moveSpeed;
+        }
+        else
+        {
+            Debug.LogError("NavMeshAgent не добавлен на зомби!");
+        }
     }
 
     private void Start()
@@ -38,17 +48,17 @@ public class ZombieAI : MonoBehaviour
         if (!_player || _playerHealth == null || _animator.GetBool("isDamage")) return;
 
         float distanceToPlayer = Vector3.Distance(transform.position, _player.position);
-        Vector3 direction = (_player.position - transform.position).normalized;
 
         if (distanceToPlayer > _attackDistance)
         {
             _animator.SetBool("isWalk", true);
             _animator.SetBool("isAttack", false);
-            _movement.Move(direction);
+            _navMeshAgent.SetDestination(_player.position);
         }
         else
         {
             _attack.Attack(_playerHealth);
+            _navMeshAgent.ResetPath();
         }
     }
 }
