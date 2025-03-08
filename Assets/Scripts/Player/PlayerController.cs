@@ -7,7 +7,7 @@ public class PlayerController : PlayerBase
     [SerializeField] private bool _mobileDevice = false;
 
     private Transform _targetZombie;
-    private float _attackRange = 2.5f;
+    private float _attackRange = 2f;
     private float _attackCooldown = 2f;
     private float _nextAttackTime = 0f;
     protected override void Awake()
@@ -82,8 +82,6 @@ public class PlayerController : PlayerBase
 
     private void AttackZombie(Transform targetZombie)
     {
-        if (_animator.GetBool("isDeath")) return;
-
         _animator.SetTrigger("isAttack");
         targetZombie.GetComponent<IDamageable>().TakeDamage(20f);
 
