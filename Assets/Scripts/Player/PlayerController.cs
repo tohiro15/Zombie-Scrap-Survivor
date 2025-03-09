@@ -39,6 +39,8 @@ public class PlayerController : PlayerBase
         }
         else
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             moveX = Input.GetAxis("Horizontal");
             moveZ = Input.GetAxis("Vertical");
         }
@@ -82,6 +84,7 @@ public class PlayerController : PlayerBase
 
     private void AttackZombie(Transform targetZombie)
     {
+        if (_currentHealth <= 0) return;
         _animator.SetTrigger("isAttack");
         targetZombie.GetComponent<IDamageable>().TakeDamage(20f);
 
