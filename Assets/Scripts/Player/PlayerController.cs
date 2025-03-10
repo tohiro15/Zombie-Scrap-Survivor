@@ -6,20 +6,27 @@ public class PlayerController : PlayerBase
     [SerializeField] private Canvas _joystickUI;
     [SerializeField] private bool _mobileDevice = false;
 
+    private IInventory _playerInventory;
     private Transform _targetZombie;
     private float _attackRange = 2f;
     private float _attackCooldown = 2f;
     private float _nextAttackTime = 0f;
+
     protected override void Awake()
     {
         base.Awake();
         CheckDevice();
+        _playerInventory = GetComponent<IInventory>();
     }
 
     private void Update()
     {
         Move();
         CheckAttack();
+        if (_playerInventory.GetCurrentWeapon() != null)
+        {
+            _playerInventory.GetCurrentWeapon().Use(); // Используем оружие при нажатии F
+        }
     }
 
     protected override void Move()
@@ -81,7 +88,6 @@ public class PlayerController : PlayerBase
         }
     }
 
-
     private void AttackZombie(Transform targetZombie)
     {
         if (_currentHealth <= 0) return;
@@ -109,5 +115,27 @@ public class PlayerController : PlayerBase
     public void SetTargetZombie(Transform zombie)
     {
         _targetZombie = zombie;
+    }
+
+    // Метод для подбора оружия при столкновении с триггером
+    private void OnTriggerEnter(Collider other)
+    {
+        // Проверка, что это оружие
+        if (other.CompareTag("Weapon"))
+        {
+            // Получаем Weapon компонент
+            Weapon weapon = other.GetComponent<Weapon>();
+
+            if (weapon != null)
+            {
+                // Добавляем оружие в инвентарь
+                _playerInventory.AddWeapon(weapon);
+
+                // Уничтожаем объект оружия после подбора
+                Destroy(other.gameObject);
+
+                Debug.Log("Оружие подобрано!");
+            }
+        }
     }
 }
